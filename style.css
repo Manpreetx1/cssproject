@@ -1,0 +1,238 @@
+
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #333; 
+  color: #0c0c0c;
+  line-height: 1.6; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Palanquin Dark", sans-serif;
+  color: #F8F9FA; 
+  margin-bottom: 0.75rem;
+}
+
+p, a, li, figcaption, td {
+  font-size: 1.1em; 
+  font-family: "Roboto Slab", serif;
+  color: #BFC9CA; 
+  text-decoration: none;
+}
+
+a {
+  color: #4DB6AC; 
+}
+
+a:hover {
+  color: #009688; 
+  text-decoration: underline; 
+}
+
+
+.header {
+  background: #263238; 
+  color: #CFD8DC; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  padding: 1rem 2rem; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header img {
+  height: auto; 
+  width: auto; 
+}
+
+.desktop-menu {
+  display: flex;
+  justify-content: flex-end; 
+  list-style-type: none; 
+}
+
+.desktop-menu li {
+  margin: 0 20px; 
+}
+
+.desktop-menu a {
+  color: #CFD8DC; 
+  text-decoration: none; 
+  font-size: 1.2em; 
+  font-weight: 300; 
+  transition: color 0.3s ease, padding 0.3s ease; 
+}
+
+.desktop-menu a:hover {
+  color: #4DB6AC; 
+  padding: 5px 0; 
+  border-bottom: 3px solid #4DB6AC; 
+}
+
+
+.hero {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("img4.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh; 
+  color: #050505;
+  text-align: center; 
+}
+
+.hero h1 {
+  font-size: 2.5rem; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+}
+
+.hero p {
+  font-size: 1.2rem; 
+  max-width: 600px; 
+  margin: 1rem auto; 
+}
+
+
+main {
+  flex: 1; 
+  padding: 2rem;
+  background: #5d9eb9; 
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.features section {
+  position: relative;
+  background: #45adb3; 
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: #2c1f1f; 
+}
+
+.features section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img1.jpg"); 
+  background-size: cover;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 0;
+  opacity: 0;
+}
+
+.features section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.features section:hover::before {
+  opacity: 1;
+}
+
+.features section h2, .features section p {
+  position: relative;
+  z-index: 1; 
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.features section::before {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 1024px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto; 
+    padding: 4rem 0; 
+  }
+
+  .features section {
+    margin-bottom: 2rem;
+  }
+
+  .desktop-menu {
+    display: none; 
+  }
+}
+
+
+footer {
+  background: #263238; 
+  color: #0c0d0d;
+  text-align: center; 
+  padding: 1rem 2rem;
+}
+
+footer p {
+  margin-bottom: 0; 
+}
+
+
+button, input[type="submit"] {
+  background: #4DB6AC;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #009688; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #B0BEC5; 
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+  border-color: #4DB6AC; 
+}
